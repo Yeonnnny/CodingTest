@@ -9,18 +9,18 @@ total=64    # 남은 막대기 길이 총합
 stack=[64]  # 남은 막대기 저장할 스택
 
 
-while total > X:
+while (total > X) :
     top = stack.pop()   # 가장 나중에 들어간 값 꺼내기
-    num = top//2        # 절반으로 자르기
-    stack.append(num)   # 잘라서 한쪽 절반을 스택에 추가
+    num = top//2    
+    stack.append(num)
     
-    if total - num >= X:
-        total -= num    # 나머지 버리기
-    else:
-        stack.append(num)   # 나머지 버리지 않음
-        # total = sum(stack)
+    if sum(stack)==X:
+        break
+    elif sum(stack)<X:
+        stack.append(num)
+
+    total = sum(stack)  # total 갱신
 #     print( "total : ",total)
     
 # print("최종 stack : ", stack)
 print(len(stack))
-    

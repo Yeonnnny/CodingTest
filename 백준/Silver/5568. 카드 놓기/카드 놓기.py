@@ -9,10 +9,12 @@ result = []         # 조합을 저장할 리스트
 for i in range(n):  # 카드 번호 입력받기
     cards.append(input())
 
+# for permutated in itertools.permutations(cards,k):
+#     val = ""
+#     for p in permutated:
+#         val+=p
+#     result.append(val)
 for permutated in itertools.permutations(cards,k):
-    val = ""
-    for p in permutated:
-        val+=p
-    result.append(val)
+    result.append("".join(permutated))
 
 print(len(set(result)))

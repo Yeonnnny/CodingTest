@@ -2,13 +2,11 @@
 
 num = int(input())
 
-d = [0 for _ in range(1001)]
+d = [0]*1001
 
-def dp(x):
-    if x==1 : return 1
-    if x==2 : return 2
-    if d[x] != 0 : return d[x]
-    d[x] = dp(x-1) + dp(x-2)
-    return d[x] % 10007
+d[1],d[2] = 1, 2
 
-print(dp(num))
+for i in range(3, num+1):
+    d[i] = (d[i-1]+d[i-2])%10007
+    
+print(d[num])

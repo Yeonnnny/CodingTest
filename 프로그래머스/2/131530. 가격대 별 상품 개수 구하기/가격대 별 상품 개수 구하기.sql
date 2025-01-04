@@ -1,6 +1,4 @@
--- 코드를 입력하세요
-
-select floor(price/10000)*10000 as price_group, count(*) as products
-from product
-group by floor(price/10000)
-order by price;
+SELECT FLOOR(PRICE/10000) * 10000 AS PRICE_GROUP, COUNT(PRODUCT_ID) AS PRODUCTS
+FROM PRODUCT
+GROUP BY 1
+ORDER BY 1

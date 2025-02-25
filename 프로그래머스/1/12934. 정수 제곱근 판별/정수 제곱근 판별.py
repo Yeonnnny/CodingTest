@@ -1,8 +1,10 @@
 def solution(n):
     answer = 0
     
-    if n == int(n**(1/2))**2:
-        answer = (n**(1/2)+1)**2
+    a = n**(1/2)
+
+    if a % 1 == 0:
+        answer = (a+1)**2
     else:
         answer = -1
     

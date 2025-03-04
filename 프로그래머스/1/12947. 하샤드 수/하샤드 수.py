@@ -9,7 +9,4 @@ def solution(x):
         value+=(a%10)
         a //= 10
     
-    if x%value == 0:
-        return True
-    else:
-        return False
+    return True if x%value==0 else False
